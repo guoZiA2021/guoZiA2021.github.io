@@ -1,0 +1,130 @@
+
+        .gz-card:hover {
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, .1), -4px -4px 10px rgba(255, 255, 255, .8);
+        }
+
+        .gz-card {
+            /*min-height: 200px;*/
+            cursor: pointer;
+            min-width: 200px;
+            overflow: auto;
+            padding: 8px 0 20px 0;
+            transition: box-shadow 1s ease-out;
+            box-shadow: 4px 4px 10px rgba(255, 255, 255, .8), -4px -4px 10px rgba(0, 0, 0, .1);
+
+            --label-size: 1.4rem;
+            --content-size: 0.8rem;
+        }
+
+        .footer {
+            transition: box-shadow 1s ease-out;
+            font-size: 0.6em;
+            box-shadow: 4px 4px 10px rgba(255, 255, 255, .8), -4px -4px 10px rgba(0, 0, 0, .1);
+        }
+
+        .footer:hover {
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, .1), -4px -4px 10px rgba(255, 255, 255, .8);
+        }
+
+        @keyframes show {
+            0% {
+                transform: translateY(-50px);
+            }
+
+            60% {
+                transform: translateY(20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @-webkit-keyframes show {
+            0% {
+                transform: translateY(-50px);
+            }
+
+            60% {
+                transform: translateY(20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 华文新魏;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .box {
+            min-height: 900px;
+        }
+
+        .title {
+            font-family: 华文彩云;
+        }
+
+        .card-label {
+            text-indent: 8px;
+            line-height: 30px;
+            transition: font-size 1s ease-in;
+            position: relative;
+            font-size: var(--label-size);
+        }
+
+        .card-content {
+            margin: 0 4px;
+            text-indent: 20px;
+            transition: font-size 100ms ease-in;
+            font-size: var(--content-size);
+        }
+
+        .gz-card:hover {
+            --label-size: 1rem;
+            --content-size: .9rem;
+        }
+
+        .gz-card:hover > .card-content {
+            margin-top: 8px;
+            /*box-shadow: 0 0px 0 100px rgba(0, 0, 0, 0.3) inset;*/
+            /*text-shadow:1px 1px 10px 50px rgba(0,0,250,1.1);*/
+        }
+
+        .card-label:after {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: '';
+            width: 0%;
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: all 1s ease-in-out;
+        }
+
+        .card-label:hover:after {
+            /*bottom:-4px;*/
+            width: 100%;
+        }
+
+        ol li {
+            list-style-type: decimal;
+            list-style-position: inside;
+        }
