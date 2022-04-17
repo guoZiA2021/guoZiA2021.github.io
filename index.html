@@ -6356,12 +6356,13 @@
         }
 
         .gz-card {
-            min-height: 200px;
+            /*min-height: 200px;*/
+            cursor: pointer;
             min-width: 200px;
-            padding: 2px 0;
+            overflow: auto;
+            padding: 8px 0 20px 0;
             transition: box-shadow 1s ease-out;
             box-shadow: 4px 4px 10px rgba(255, 255, 255, .8), -4px -4px 10px rgba(0, 0, 0, .1);
-
 
             --label-size: 1.4rem;
             --content-size: 0.8rem;
@@ -6375,18 +6376,6 @@
 
         .footer:hover {
             box-shadow: 4px 4px 10px rgba(0, 0, 0, .1), -4px -4px 10px rgba(255, 255, 255, .8);
-        }
-
-        @keyframes increase {
-            from {
-                width: 0;
-            }
-            /*50%{*/
-            /*    width:100%;*/
-            /*}*/
-            /*to{*/
-            /*    width:100%;*/
-            /*}*/
         }
 
         @keyframes show {
@@ -6437,7 +6426,7 @@
         }
 
         .box {
-            height: 900px;
+            min-height: 900px;
         }
 
         .title {
@@ -6455,27 +6444,26 @@
         .card-content {
             margin: 0 4px;
             text-indent: 20px;
-            letter-spacing: 2px;
-            transition: font-size 1s ease-in, letter-spacing 300ms ease-out;
+            transition: font-size 100ms ease-in;
             font-size: var(--content-size);
         }
 
         .gz-card:hover {
             --label-size: 1rem;
-            --content-size: 1.2rem;
+            --content-size: .9rem;
         }
 
         .gz-card:hover > .card-content {
+            margin-top: 8px;
             /*box-shadow: 0 0px 0 100px rgba(0, 0, 0, 0.3) inset;*/
             /*text-shadow:1px 1px 10px 50px rgba(0,0,250,1.1);*/
-            letter-spacing: 0;
         }
 
         .card-label:after {
             position: absolute;
             left: 0;
             right: 0;
-            bottom: -6px;
+            bottom: 0;
             content: '';
             width: 0%;
             height: 2px;
@@ -6487,31 +6475,141 @@
             /*bottom:-4px;*/
             width: 100%;
         }
+
+        ol li {
+            list-style-type: decimal;
+            list-style-position: inside;
+        }
     </style>
+
+    <script>
+        let elems = document.getElementsByClassName('gz-card');
+
+        function handleClick() {
+            console.log('click',this);
+            window.screenTop="1000px";
+        }
+
+        window.onload=function(){
+            for (var i = 0, len = elems.length; i < len; i++) {
+                var elem=elems[i];
+                elem.addEventListener('click',handleClick, true);
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="container">
+
     <header class="header">
         <div class="gz-fw-7 title gz-fs-4 gz-text-center gz-py-2">个人履历</div>
     </header>
 
-    <section class="box gz-d-flex gz-flex-column gz-justify-content-between gz-align-items-stretch gz-px-5">
+    <section class="box gz-px-5">
+
         <div class="gz-card">
-            <div class="card-label">技术栈</div>
-            <div class="card-content">全栈,java,vue全家桶</div>
+            <div class="card-label">求职意向</div>
+            <div class="card-content">
+                <div class="gz-d-flex gz-flex-column">
+                    <div class="gz-d-flex gz-mt-1">
+                        <span class="gz-mr-1">李彪</span>
+                        <span class="gz-mr-1">全栈开发</span>
+                        <span class="gz-mr-1">长沙</span>
+                        <span class="gz-mr-1">面议</span>
+                        <span class="gz-mr-1">1天内到岗</span>
+                    </div>
+                    <div class="gz-d-flex gz-mt-1">
+                        <span class="gz-mr-1">22岁</span>
+                        <span class="gz-mr-1">男</span>
+                        <span class="gz-mr-1">开发2年</span>
+                        <span class="gz-mr-1">178cm</span>
+                        <span class="gz-mr-1">大专（湖南潇湘学院）</span>
+                    </div>
+                    <div class="gz-d-flex gz-mt-1">
+                        <span class="gz-mr-1">16670148215</span>
+                        <span class="gz-mr-1">3437705679@qq.com</span>
+                        <span class="gz-mr-1">https://gitee.com/guoZiLB</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="gz-card">
             <div class="card-label">工作经历</div>
-            <div class="card-content">2年开发</div>
+            <div class="card-content">
+                <div class="gz-row gz-no-gutters gz-fs-1">
+                    <span class="gz-col-3">2020.8.1-2022.02.30</span>
+                    <span class="gz-col-6 gz-text-center">慧都九州信息技术有限公司 [杭州]</span>
+                    <span class="gz-col-3">全栈开发工程师</span>
+                </div>
+                <ol class="">
+                    <li>开发实现将产品需求原型图转换成系统功能。</li>
+                    <li>协助测试人员完成软件模块测试，参与需求文档、接口开发文档的编写。</li>
+                    <li>开发过程中进度的反馈、问题的跟踪处理以及和团队间的沟通协作。</li>
+                </ol>
+            </div>
         </div>
+
+        <div class="gz-card">
+            <div class="card-label">技术栈</div>
+            <div class="card-content">
+                <ol>
+                    <li>Java基础扎实，熟悉集合、多线程、JVM，垃圾回收机制 等基础技术，精通lambda表达式 ,结合开发熟练使用Optional类与Stream流,提高代码质量,具有良好的代码规范。</li>
+                    <li>掌握Spring的IOC,AOP思想,了解JVM内存模型垃圾回收机制。</li>
+                    <li>掌握、代理、工厂、装饰者、单例、构建者等主流设计。</li>
+                    <li>掌握 IDEA、VsCode 、MyEclipse、Hbuilder 等开发工具，掌握 Maven、Jenkins、Git等项目管理工具。</li>
+                    <li>掌握 SpringBoot + SpringCloud (OR) SpringCloudAlibaba 的微服务开发架构,连接其中各大分布式组件的应用和底层。</li>
+                    <li>掌握SSM、SSH、SpringMVC开发模式及工作原理。</li>
+                    <li>掌握MyBatisPlus、SpringSecurity、JustAuth、Redis、SwaggerUI等等开源框架及其他中间件产品,能够熟练的读代码。</li>
+                    <li>掌握MySQL、Oracle 、SQLServer、PostgreSQL等关系型数据库，熟悉索引的底层原理。</li>
+                    <li>掌握 Redis，包括缓存的基本使用，缓存穿透、击穿、雪崩等问题。</li>
+                    <li>掌握主流框架 Vue全家桶、React Native、Uniapp小程序,以及Es6新特性 有着全栈的开发能力</li>
+                    <li>掌握H5、CSS3、JS、JQ、ElementUI、Boostrap、tailwind、腾讯tdesign、字节的acrodesign、Ts、VantUI、Echarts、地图等框架</li>
+                    <li>掌握style预编译语法Scss 、Less。</li>
+                    <li>具有前后端分离架构的能力,包括 HTTP 的 restful 风格、WebService、 JWT、Swagger api 文档等使用。</li>
+                    <li>掌握 常用模板引擎 Freemarker、Thymeleaf 、Jsp的使用。</li>
+                    <li>掌握 Linux 操作系统命令,能够独立部署项目,并且熟练使用Docker容器 , 配置自动化部署 ,有一定的Linux运维能力。</li>
+                    <li>掌握Struts2能熟练使用拦截器结果集。</li>
+                    <li>掌握elasticsearch,solr搜索引擎的使用,能驾驭千万级的查询,包括DSL语法。</li>
+                    <li>掌握Postman、JMeter测试分析工具。</li>
+                    <li>能对Mysql索引进行优化,结合explain分析SQL,配置优化索引。</li>
+                </ol>
+            </div>
+        </div>
+
         <div class="gz-card">
             <div class="card-label">爱好</div>
-            <div class="card-content">追剧,音乐,骑行</div>
+            <div class="card-content">
+                <ol>
+                    <li>
+                        喜欢写博客记录笔记 , 现在有自己的博客网站 , 在那里记录自己的点滴进步。
+                    </li>
+                    <li>
+                        喜欢逛LeetCode,LintCode,Runoob,Github,Gitee ,博客园。
+                    </li>
+                    <li>
+                        喜欢交际,我相信我每个认识的人身上都是我可以学习的闪光点。
+                    </li>
+                </ol>
+            </div>
         </div>
+
+        <div class="gz-card">
+            <div class="card-label">自我评价</div>
+            <div class="card-content">
+                <ol>
+                    <li>热爱技术，喜欢思考，乐于分享开发技术经验 ，喜欢写开发笔记</li>
+                    <li>在写代码之前我习惯花一些时间将逻辑关系理顺, 把细节考虑清楚</li>
+                    <li>自己开发过低代码平台和多套代码模板，所以开发速度相对较快</li>
+                    <li>对代码有洁癖,严格要求高质量代码</li>
+                    <li>痴迷于计算机编程;具备独立解决问题的能力</li>
+                </ol>
+            </div>
+        </div>
+
         <div class="gz-card">
             <div class="card-label">规划</div>
-            <div class="card-content">当个高管吧,也想创业</div>
+            <div class="card-content">当个公司高管吧,还想做独立游戏开发者</div>
         </div>
     </section>
 
