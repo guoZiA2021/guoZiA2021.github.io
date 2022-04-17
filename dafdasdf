@@ -1,0 +1,36 @@
+[33mcommit b4655ca0101a63d3b7d71cac0419ca4538589e2b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 099ff73 cf8f5b5
+Author: gz <3437705679@qq.com>
+Date:   Sun Apr 17 10:56:25 2022 +0800
+
+    Merge branch 'master' of git.zhlh6.cn:guoZiA2021/guoZiA2021.github.io
+
+[33mcommit 099ff73e2a77ef91ade93af2d7af33eba6595ddc[m
+Author: gz <3437705679@qq.com>
+Date:   Sun Apr 17 10:53:51 2022 +0800
+
+    'gz'
+
+[33mcommit cf8f5b5f53bdb50d5283735b319771664baaf46d[m
+Author: guoZiA2021 <96190310+guoZiA2021@users.noreply.github.com>
+Date:   Sun Apr 17 10:47:57 2022 +0800
+
+    Create CNAME
+
+[33mcommit e408d8ce3df24a96dd692da2267a9fe4ac4575f0[m
+Author: guoZiA2021 <96190310+guoZiA2021@users.noreply.github.com>
+Date:   Sun Apr 17 10:46:06 2022 +0800
+
+    Update 404.html
+
+[33mcommit 5048d3ba1395548d6e1da0259346456d5450551a[m
+Author: guoZiA2021 <96190310+guoZiA2021@users.noreply.github.com>
+Date:   Sat Apr 16 23:28:03 2022 +0800
+
+    Update index.html
+
+[33mcommit ed89e0db219597852fc18efa1490ba80ec2e1a00[m
+Author: 34377 <3437705679@qq.com>
+Date:   Thu Dec 16 00:23:50 2021 +0800
+
+    deploy
